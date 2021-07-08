@@ -22,6 +22,29 @@ body {
     padding: 1em;
 }
 
+#main {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#startBtn {
+    text-decoration: none;
+    display: block;
+    border: 2px solid white;
+    width: 250px;
+    height: 65px;
+    text-align: center;
+    line-height: 65px;
+    border-radius: 35px;
+    font-weight: bold;
+    color: white;
+    background:rgb(66, 93, 247);
+    font-size: 25px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+}
+
 h1 {
     text-align: center;
     color: blue;
