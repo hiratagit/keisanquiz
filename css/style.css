@@ -1,0 +1,91 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+body {
+    background: rgb(247, 244, 66);
+    font-family: "arial black, Arial, Helvetica, sans-serif";
+}
+
+.container {
+    max-width: 650px;
+    /* border: 1px solid white; */
+    margin: 0 auto;
+    padding: 1em;
+}
+
+h1 {
+    text-align: center;
+    color: blue;
+    text-shadow: 2px 2px 0 white;
+    margin-bottom: .5em;
+}
+
+#question {
+    display: flex;
+    width: 100%;
+    background: white;
+    border-radius: 6px;
+    padding: 1em;
+    margin-bottom: 2em;
+    justify-content: center;
+}
+
+#question .q-box {
+    /* border: 1px solid red; */
+    font-size: 35px;
+    font-weight: bold;
+    padding: .25em;
+}
+
+#kotae {
+    text-align: center;
+    margin-bottom: .5em;
+}
+
+#answer-text {
+    margin: 0 auto;
+    font-size: 50px;
+    font-weight: bold;
+    width: 150px;
+    height: 100px;
+    background: #fff;
+    text-align: center;
+    line-height: 110px;
+    border-radius: 10px;
+}
+
+#attension {
+    /* display: none; */
+    visibility: hidden;
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1em;
+}
+
+#attension.blinking {
+    /* display: block; */
+    visibility: visible;
+
+    animation: blinking 2s linear none;
+}
+
+@keyframes blinking {
+    0%, 50%, 100% {
+        opacity: 0;
+    }
+
+    25%, 75% {
+        opacity: 1;
+    }
+}
