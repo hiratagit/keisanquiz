@@ -48,6 +48,8 @@
         const operators = [ 'plus', 'minus' ];
         const formula = new Foumula(operators[Math.floor(Math.random() * operators.length)]);
         answer = formula.getAnswer();
+        document.getElementById('answer-text').textContent = '';
+        changeJudgeMark();
     }
 
     setFormula();
@@ -81,15 +83,33 @@
             answer.textContent =  ansNum;
             judgeAnswer(ansNum);
         }
+
     }
 
     function judgeAnswer(num) {
+        const correctSound = document.getElementById('correctSound');
+        const wrongSound = document.getElementById('wrongSound');
+        
+
         if(num === answer) {
-            console.log('yes');
-            setFormula();
+            correctSound.currentTime = 0;
+            correctSound.play();
+            changeJudgeMark('url(../img/correct.png)');
+            setTimeout(setFormula, 1000);
+            
         } else {
-            console.log('no')
+            wrongSound.currentTime = 0;
+            wrongSound.play();
+            changeJudgeMark('url(../img/wrong.png)');
+            setTimeout(() => {
+                changeJudgeMark();
+            }, 1000)
         }
+    }
+
+    function changeJudgeMark(url = '') {
+        const judgeMark = document.getElementById('judge-mark');
+        judgeMark.style.backgroundImage = url;
     }
 
     recognition.addEventListener('result', e => {
@@ -100,6 +120,7 @@
 
         if (e.results[0].isFinal) {
             setAnswer(transcript);
+            recognition.stop();
         }
     });
 
