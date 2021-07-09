@@ -89,8 +89,8 @@
     function judgeAnswer(num) {
         const correctSound = document.getElementById('correctSound');
         const wrongSound = document.getElementById('wrongSound');
+        // correctSound.play();
         
-
         if(num === answer) {
             correctSound.currentTime = 0;
             correctSound.play();
